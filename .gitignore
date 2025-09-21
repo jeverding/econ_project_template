@@ -1,6 +1,6 @@
 
 # Project
 data_raw/**
-!data_raw_**/.gitkeep
+!data_raw/**/.gitkeep
 output_temp/**
 !output_temp/**/.gitkeep
