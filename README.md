@@ -22,6 +22,13 @@ function wh() {
 }
 ```
 
+### Git-Zotero-Sync
+You sync references in `writing/references/project.bib` with Zotero via the Better BibTex plugin.
+For more information about auto-exports, see [here](https://retorque.re/zotero-better-bibtex/exporting/auto/index.html#managing-auto-exports).
+For more information about syncing with git in specific, see [here](https://retorque.re/zotero-better-bibtex/exporting/auto/index.html#git-support).
+
+This git repo is pre-configured such that the Git-Overleaf-Sync includes Zotero references.
+
 ### .gitignore
 The ``.gitignore`` file is pre-configured with the intention to protect sensitive information to be included in this git repo. 
 If this is relevant to your project, ensure this is the case, e.g. by customizing the ``.gitignore`` file.
