@@ -3,6 +3,7 @@
 data_raw/**
 !data_raw/**/.gitkeep
 !data_raw/__init__.py
+!data_raw/config.R
 output_temp/**
 !output_temp/**/.gitkeep
 
