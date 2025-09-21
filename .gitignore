@@ -2,5 +2,6 @@
 # Project
 data_raw/**
 !data_raw/**/.gitkeep
+!data_raw/__init__.py
 output_temp/**
 !output_temp/**/.gitkeep
