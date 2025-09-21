@@ -1,0 +1,6 @@
+
+# Project
+data_raw/**
+!data_raw_**/.gitkeep
+output_temp/**
+!output_temp/**/.gitkeep
