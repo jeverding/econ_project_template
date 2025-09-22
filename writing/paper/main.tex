@@ -1,0 +1,92 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage{authblk}
+\usepackage{ifthen}
+\usepackage{lipsum} %Likely not needed in actual project
+\usepackage{hyperref}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+	\DeclareMathOperator*{\argmin}{arg\,min}
+\usepackage{amssymb}
+\usepackage[ngerman, english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage[onehalfspacing]{setspace}
+\linespread{1.5}
+\usepackage{color}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{blindtext}
+\usepackage{dblfloatfix}
+\usepackage{caption}
+\usepackage{url}
+\usepackage[style=chicago-authordate, sorting=nyt, backend=bibtex, natbib=true, isbn=false, doi=false, maxbibnames=99, maxcitenames=2,uniquelist=false,giveninits=true]{biblatex}
+\renewbibmacro{in:}{} %Supresses `In:' in bibliography
+	\renewcommand*{\compcitedelim}{\addsemicolon\space} %Use separator ";" for multiple citations
+	\renewcommand*{\textcitedelim}{\addsemicolon\space} %Use separator ";" for multiple citations in text
+\addbibresource{output/references/project.bib} 
+\usepackage{threeparttable}
+\usepackage{lscape}
+\usepackage{placeins}  % for FloatBarrier
+\usepackage{fancyhdr}
+\usepackage[toc,page,titletoc]{appendix} %Appendix
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+
+\widowpenalty=4500
+
+\renewcommand{\figurename}{Figure} %Change label of figures to `Figure'
+
+\providecommand{\keywords}[1]{\textbf{\textit{Keywords: }} #1}
+\providecommand{\jelclass}[1]{\textbf{\textit{JEL classification: }} #1}
+
+	\renewcommand\Authands{ and } %necessary for author-affil/titlepage package authblk
+
+
+\makeatletter
+\def\@fnsymbol#1{\ensuremath{\ifcase#1\or *\or \ddagger\or
+   \mathsection\or \mathparagraph\or \|\or **\or \dagger\dagger
+   \or \ddagger\ddagger \else\@ctrerr\fi}}
+    \makeatother
+
+\begin{document}
+
+\input{paper/titlepage.tex} 
+
+\newpage{}\setcounter{page}{1} 
+\section{Introduction} \label{sec:Introduction}
+
+
+\section{Related Literature} \label{sec:Literature}
+
+
+\section{Institutional Background} \label{sec:InstBackground}
+
+
+\section{Data} \label{sec:Data} 
+
+\subsection{Sample selection} \label{subsec:sample}
+
+\section{Empirical approach} \label{sec:Empirical}
+
+
+\section{Results} \label{sec:Results}
+
+\section{Sensitivity analysis} \label{sec:Sensitivity}
+
+
+\section{Conclusion} \label{sec:Conclusion}
+
+
+\clearpage
+\printbibliography
+
+% Comment out unused sections below
+\input{paper/figures_main.tex}
+\input{paper/tables_main.tex}
+\input{paper/appendix.tex}
+\input{paper/figures_appendix.tex}
+\input{paper/tables_appendix.tex}
+
+\end{document}

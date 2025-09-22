@@ -1,0 +1,41 @@
+\newcommand{\draftnote}{Preliminary draft, please do not redistribute.}
+\newcommand{\showdraftnote}{true} %Set to false to hide draft note
+\newcommand{\commitref}{\input{output/references/commit_hash.tex}}
+\newcommand{\showcommitref}{true} %Set to false to hide commit ref
+\newcommand{\latestlink}{https://github.com/jeverding/econ_project_template/writing/paper/paper.pdf}
+\newcommand{\showlatestlink}{true} %Set to false to hide link to latest version
+
+
+\title{\textsc{Paper Title}\thanks{We thank ... }} 
+\author[,a]{First Author\thanks{Address: ... Email: ...}}
+\author[,a, b]{Second Author\thanks{Email: ...}}
+\affil[a]{University A, Country A}
+\affil[b]{University B, Country B}
+\date{This version: September 22, 2025
+    \ifthenelse{\equal{\showlatestlink}{true}}
+    {  \\ \protect\href{\latestlink}{(Click here for latest version)}}
+    {}
+    \ifthenelse{\equal{\showcommitref}{true}}
+    { \\ \small \texttt{\commitref}}
+    {}
+}
+\maketitle
+\thispagestyle{empty}
+
+\cfoot{\thepage}
+
+% Optional draft note above abstract:
+\ifthenelse{\equal{\showdraftnote}{true}}{
+    \begin{center}
+        \textbf{\textit{\draftnote}}
+    \end{center}
+    \vspace{1em}
+}
+
+\begin{abstract}
+\noindent \lipsum[1]
+
+\end{abstract} 
+\noindent
+\jelclass{\textbf{A01, B02, C03, D04}} \\
+\keywords{\textbf{...}} 
