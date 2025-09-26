@@ -1,0 +1,190 @@
+\documentclass[12pt, ngerman]{beamer}
+
+\mode<presentation> {}
+
+% Import custom footer
+\input{slides/02_footer.tex}
+
+\usepackage[ngerman, english]{babel}
+\usepackage[ansinew]{inputenc}
+\usepackage{empheq,pifont}
+\usepackage{bbm} %With the bbm package (\usepackage{bbm}) it is possible to add symbols for several standard sets.
+\usepackage[font=scriptsize, labelfont=scriptsize]{caption}
+\usepackage{amsmath}
+	\DeclareMathOperator*{\argmin}{arg\,min}
+\usepackage{hyperref}
+\usepackage[style=chicago-authordate, sorting=nyt, backend=bibtex, natbib=true, isbn=false, doi=false, maxbibnames=99, maxcitenames=2,uniquelist=false]{biblatex}
+\usepackage{wrapfig}
+\usepackage{array}
+ \usepackage{appendixnumberbeamer}
+\usepackage{appendix}
+\usepackage{setspace}
+\usepackage{graphicx, float, booktabs}
+\usepackage{threeparttablex}	%combine threeparttable und longtable
+\usepackage{threeparttable}
+\usepackage{booktabs}
+\usepackage{epstopdf}
+\usepackage{longtable}
+\usepackage{setspace}
+\usepackage{siunitx}
+\usepackage{rotating}
+\usepackage{lmodern}
+\usepackage{arydshln}
+\usepackage[]{threeparttable}
+\usepackage{dcolumn}
+\usepackage{array}
+\usepackage{multicol}
+\setbeamersize{text margin left=5mm, text margin right=5mm}
+\setbeamerfont{page number in head/foot}{size=\tiny}
+\setbeamercovered{transparent=10}	%Gray overlay text
+\setbeamertemplate{navigation symbols}{} %Supresses navigation bar
+
+\setbeamercolor{structure}{fg=darkred} %% Defines the color of all items. Including all types of bulllet points and buttons.
+%%\setbeamertemplate{itemize item}{\color{yellow}$\bullet$} %% Another way, but only for the bulletpoint
+%%\setbeamertemplate{itemize subitem}{\color{green}$\blacktriangleright$} %% Another way, but only fpr the triangle
+
+\setbeamertemplate{itemize item}[circle]
+\setbeamertemplate{itemize subitem}[triangle]
+
+\setbeamertemplate{caption}[numbered] %% Tables and Figures are enumerated automatically.
+\usepackage{hanging}
+\usepackage{tikz}
+
+% Apply custom footer
+\usecustomfooter
+\showpagenumberstrue % Default is also true, so this is optional
+
+
+%%The whole paragrapgh is necessary to decide whether a slide should have a bullet point in the header or not. \miniframeson and \miniframesoff are the commands for that.
+\makeatletter
+\let\beamer@writeslidentry@miniframeson=\beamer@writeslidentry
+\def\beamer@writeslidentry@miniframesoff{%
+  \expandafter\beamer@ifempty\expandafter{\beamer@framestartpage}{}% does not happen normally
+  {%else
+    % removed \addtocontents commands
+    \clearpage\beamer@notesactions%
+  }
+}
+\newcommand*{\miniframeson}{\let\beamer@writeslidentry=\beamer@writeslidentry@miniframeson}
+\newcommand*{\miniframesoff}{\let\beamer@writeslidentry=\beamer@writeslidentry@miniframesoff}
+\makeatother
+
+
+
+\usecolortheme{beaver}
+\usepackage{multirow}
+\usepackage{bigdelim}
+\renewcommand*{\familydefault}{\sfdefault}
+\renewcommand\textbullet{\ensuremath{\bullet}}
+\newcommand*{\head}{\bfseries}
+\newcolumntype{_}{>{\global\let\currentrowstyle\relax}}
+\newcolumntype{^}{>{\currentrowstyle}}
+\newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}%
+  #1\ignorespaces
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% Prepare title page and generate slide later %
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Template}
+\subtitle{Examples slides}
+\author{Jakob Everding} %\\ \footnotesize (Universität Hamburg)}
+\institute{Universit\"at Hamburg}
+%\titlegraphic{\includegraphics[width=3.5cm]{some_logo.jpg}}
+
+\date{September 25, 2025}
+
+%%%%%%%%%%%%
+% Document %
+%%%%%%%%%%%%
+
+\begin{document}
+	\nocite{*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Gen. title page:
+\usebackgroundtemplate{%             declare watermark
+%\tikz[overlay,remember picture] \node[opacity=0.3, at=(current page.south east)] {
+\tikz[overlay,remember picture] \node[opacity=1.0, at=(current page.center), xshift=3.8cm, yshift=-2.25cm] {
+   \includegraphics[width=0.4\paperwidth]{output/figures/UHH-Siegel.jpg}};
+}
+\frame{\titlepage
+\thispagestyle{empty}}
+\usebackgroundtemplate{ }    %% undeclare watermark
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\tableofcontents
+%\thispagestyle{empty}
+\addtocounter{framenumber}{-1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Examples}
+\subsection{}
+\begin{frame}[label=ex_slide]
+\frametitle{\hyperlink{introapp}{Example slide}}
+\begin{enumerate}
+	\item One
+    \pause
+	\item Two
+	\begin{itemize}
+		\item A
+		\item B
+	\end{itemize}
+\end{enumerate}
+\vspace{0.5cm}
+\hyperlink{ex_table}{\beamergotobutton{Table: Example table}} \\
+\end{frame}
+
+\miniframesoff
+%% This command causes that for every following frame no additional bullet point appears in the header. \miniframeson \miniframesoff can be used as a switch turning it on and off.
+
+\section{}
+\begin{frame}[noframenumbering,plain]
+\frametitle{Thank you}
+\centering{Jakob Everding} \\
+\vspace{0.5cm}
+\centering{\footnotesize{Hamburg Center for Health Economics \\
+	University of Hamburg \\
+	\url{jakob.everding@uni-hamburg.de}
+}}
+\end{frame}
+
+%% The following lines are creating the footer with its content and WITHOUT page numbers.
+\showpagenumbersfalse
+
+
+\section{}
+
+\makeatletter
+    \setbeamertemplate{headline}[default]
+    \def\beamer@entrycode{\vspace*{-\headheight}}
+\makeatother
+\begin{frame}[label=ex_table,noframenumbering]
+\frametitle{\hyperlink{introapp}{Example table}}
+\begin{table} % h: here; t: top; b: bottom; p: own page
+\vspace{-0.5cm}
+\scriptsize %% Necessary for reducing the size of the table that it fits on the slide.
+\setlength\tabcolsep{3.5pt}
+\centering
+\begin{threeparttable}
+\caption{Header.} \label{tab:header}
+\begin{tabular}{l *{3}{c}}
+\hline
+\addlinespace \multicolumn{1}{l}{Country} & \multicolumn{2}{c}{Dates} \\
+\cmidrule(lr){2-3}
+&\multicolumn{1}{c}{A}&\multicolumn{1}{c}{B} \\
+\hline
+\addlinespace
+Austria&         1&         2\\
+Australia&         3&         4\\
+\hline
+\end{tabular}
+\begin{tablenotes}
+\item \textit{Source:} ...
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+\vspace{0.5cm}
+\hyperlink{ex_slide}{\beamergotobutton{Back}} \\
+\end{frame}
+
+\end{document}

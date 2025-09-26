@@ -1,0 +1,35 @@
+\newif\ifshowpagenumbers
+\showpagenumberstrue
+
+\defbeamertemplate{footline}{customfooter}
+{%
+  \nointerlineskip%
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,sep=0pt,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}Jakob Everding
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333334\paperwidth,ht=2.25ex,dp=1ex,sep=0pt,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}Example slides%
+  \end{beamercolorbox}%
+  \ifshowpagenumbers%
+    \begin{beamercolorbox}[wd=.222222\paperwidth,ht=2.25ex,dp=1ex,sep=0pt,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}UHH, 2025-09-25%
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.111111\paperwidth,ht=2.25ex,dp=1ex,sep=0pt,center]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertframenumber{} / \inserttotalframenumber\hspace*{2ex}%
+  \end{beamercolorbox}%
+  \else%
+    \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,sep=0pt,center]{date in head/foot}%
+        \usebeamerfont{date in head/foot}UHH, 2025-09-25%
+    \end{beamercolorbox}%
+  \fi%
+  \vskip0pt%
+}%
+}
+\makeatother
+
+
+\newcommand{\usecustomfooter}{
+    \setbeamertemplate{footline}[customfooter]
+}
