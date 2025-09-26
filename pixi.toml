@@ -8,3 +8,30 @@ version = "0.1.0"
 [tasks]
 
 [dependencies]
+# Core languages
+python = ">=3.12"
+r-base = ">=4.4"
+
+# Python
+
+# R
+r-essentials = "*"
+
+# Jupyter
+jupyterlab = "*"
+ipykernel = "*"
+r-irkernel = "*"
+
+# LaTeX
+tectonic = "*"
+
+# Tooling
+chktex = "*"
+black = "*"
+isort = "*"
+mypy = "*"
+pre-commit = "*"
+ruff = "*"
+r-lintr = "*"
+r-styler = "*"
+
