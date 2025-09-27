@@ -21,3 +21,5 @@ jobs:
         uses: EndBug/add-and-commit@a94899bca583c204427a224a7af87c02f9b325d5
         with:
           message: 'Update commit hash, LaTeX to pdf'
+          author_name: 'Jakob Everding'
+          author_email: 'jakob.everding@uni-hamburg.de'
