@@ -17,6 +17,17 @@ jobs:
       - name: Update commit_hash.tex with current commit hash
         run: |
           echo -e "${GITHUB_SHA}\n" > writing/output/references/commit_hash.tex
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@25080975331dc4fc8e6f1af55788e00f84f51fff
+        with:
+          root_file: |
+            paper/01_paper.tex
+            slides/01_slides.tex
+          working_directory: writing
+      - name: Rename PDF files
+        run: |
+          mv writing/paper/01_paper.pdf writing/paper/paper.pdf
+          mv writing/slides/01_slides.pdf writing/slides/slides.pdf
       - name: Commit and push changes
         uses: EndBug/add-and-commit@a94899bca583c204427a224a7af87c02f9b325d5
         with:
