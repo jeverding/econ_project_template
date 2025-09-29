@@ -23,8 +23,6 @@ jobs:
           root_file: |
             paper/01_paper.tex
           working_directory: writing
-      - name: Find PDF files
-        run: find . -name '*.pdf'
       - name: Rename PDF files
         run: |
           mv writing/01_paper.pdf writing/paper/paper.pdf
