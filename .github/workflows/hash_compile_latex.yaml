@@ -27,7 +27,7 @@ jobs:
         run: find . -name '*.pdf'
       - name: Rename PDF files
         run: |
-          mv writing/paper/01_paper.pdf writing/paper/paper.pdf
+          mv writing/01_paper.pdf writing/paper/paper.pdf
       - name: Commit and push changes
         uses: EndBug/add-and-commit@a94899bca583c204427a224a7af87c02f9b325d5
         with:
