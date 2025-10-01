@@ -40,9 +40,20 @@
 \setbeamercovered{transparent=10}	%Gray overlay text
 \setbeamertemplate{navigation symbols}{} %Supresses navigation bar
 
-\setbeamercolor{structure}{fg=darkred} %% Defines the color of all items. Including all types of bulllet points and buttons.
-%%\setbeamertemplate{itemize item}{\color{yellow}$\bullet$} %% Another way, but only for the bulletpoint
-%%\setbeamertemplate{itemize subitem}{\color{green}$\blacktriangleright$} %% Another way, but only fpr the triangle
+%% Define the color of all items. Including all types of bulllet points and buttons.
+\newcommand{\setbeamercolorsall}[2]{%
+  \setbeamercolor{structure}{#1=#2}%
+  \setbeamercolor{frametitle}{#1=#2}%
+  \setbeamercolor{author in head/foot}{#1=#2}%
+  \setbeamercolor{title in head/foot}{#1=#2}%
+  \setbeamercolor{date in head/foot}{#1=#2}%
+  \setbeamercolor{page number in head/foot}{#1=#2}%
+  \setbeamercolor{title}{#1=#2}%
+\setbeamercolor{titlelike}{#1=#2}%
+}
+
+\setbeamercolorsall{fg}{Mahogany}
+
 
 \setbeamertemplate{itemize item}[circle]
 \setbeamertemplate{itemize subitem}[triangle]
