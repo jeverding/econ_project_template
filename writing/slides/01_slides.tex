@@ -6,6 +6,7 @@
 \input{slides/02_footer.tex}
 
 \usepackage[ngerman, english]{babel}
+\usepackage[iso]{datetime2}
 \usepackage[ansinew]{inputenc}
 \usepackage{empheq,pifont}
 \usepackage{bbm} %With the bbm package (\usepackage{bbm}) it is possible to add symbols for several standard sets.
@@ -93,7 +94,7 @@
 \institute{Universit\"at Hamburg}
 %\titlegraphic{\includegraphics[width=3.5cm]{some_logo.jpg}}
 
-\date{September 25, 2025}
+\date{\today}
 
 %%%%%%%%%%%%
 % Document %
@@ -132,6 +133,17 @@
 \end{enumerate}
 \vspace{0.5cm}
 \hyperlink{ex_table}{\beamergotobutton{Table: Example table}} \\
+\end{frame}
+
+\begin{frame}[label=ex_slide]
+\frametitle{\hyperlink{introapp}{Example graph}}
+\begin{figure}[firststage]
+	\vspace{-0.2cm}
+	\centering
+	\caption{Open access logo.}
+	\includegraphics[height=0.3\textheight]{output/figures/open_access_logo.png}	%trim: left bottom right top
+\end{figure}
+\vspace{-1cm}
 \end{frame}
 
 \miniframesoff

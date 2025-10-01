@@ -19,16 +19,19 @@ jobs:
         with:
           root_file: |
             paper/01_paper.tex
+            slides/01_slides.tex
           working_directory: writing
       - name: Rename PDF files
         run: |
           mv writing/01_paper.pdf writing/paper/paper.pdf
+          mv writing/01_slides.pdf writing/slides/slides.pdf
       - name: Commit and push changes
         uses: EndBug/add-and-commit@a94899bca583c204427a224a7af87c02f9b325d5
         with:
           add: |
             writing/output/references/commit_hash.tex
             writing/paper/paper.pdf
+            writing/slides/slides.pdf
           message: 'Update commit hash, LaTeX to pdf'
           author_name: 'Jakob Everding'
           author_email: 'jakob.everding@uni-hamburg.de'

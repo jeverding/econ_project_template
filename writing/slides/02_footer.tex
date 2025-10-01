@@ -14,7 +14,7 @@
   \end{beamercolorbox}%
   \ifshowpagenumbers%
     \begin{beamercolorbox}[wd=.222222\paperwidth,ht=2.25ex,dp=1ex,sep=0pt,right]{date in head/foot}%
-    \usebeamerfont{date in head/foot}UHH, 2025-09-25%
+    \usebeamerfont{date in head/foot}UHH, \DTMtoday%
   \end{beamercolorbox}%
   \begin{beamercolorbox}[wd=.111111\paperwidth,ht=2.25ex,dp=1ex,sep=0pt,center]{date in head/foot}%
     \usebeamerfont{date in head/foot}\insertframenumber{} / \inserttotalframenumber\hspace*{2ex}%
@@ -24,10 +24,9 @@
         \usebeamerfont{date in head/foot}UHH, 2025-09-25%
     \end{beamercolorbox}%
   \fi%
+  }%
   \vskip0pt%
-}%
 }
-\makeatother
 
 
 \newcommand{\usecustomfooter}{
