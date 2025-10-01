@@ -1,8 +1,5 @@
 name: Update commit hash and compile LaTeX
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 env:
