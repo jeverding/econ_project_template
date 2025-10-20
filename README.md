@@ -35,6 +35,7 @@ pixi run pre-commit run --all-files
 
 ### Raw data reference
 If you do not want to put the raw data in the project directory `data_raw/`, you can define a reference to the actual location of the raw data using the environment variable `DATA_RAW_PATH`.
+This environment variable can be used by Python, R, and Stata code (in `data_raw/`, see `__init__.py`, `config.R`, and `config.do`, respectively).
 
 ### Git-Overleaf-Sync
 To sync the `writing/` subdir with Overleaf, use the custom command `wh` as defined below (or directly the git commands therein).
